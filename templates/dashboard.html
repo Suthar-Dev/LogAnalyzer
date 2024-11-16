@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analyzer - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src=""></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Log Analyzer</h1>
+            <nav>
+                <a href="/">Upload</a>
+                <a href="/dashboard" class="active">Dashboard</a>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Logs</h3>
+                    <p id="total-logs">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Unique Users</h3>
+                    <p id="unique-users">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Unique IPs</h3>
+                    <p id="unique-ips">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Unique Events</h3>
+                    <p id="unique-events">-</p>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Severity Breakdown</h3>
+                    <canvas id="severity-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Peak Activity Hours</h3>
+                    <canvas id="activity-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="suspicious-logs">
+                <h3>Suspicious Activities</h3>
+                <div class="table-container">
+                    <table id="suspicious-table">
+                        <thead>
+                            <tr>
+                                <th>Log Entry</th>
+                                <th>IP Address</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<logs>
+  <log>
+    <timestamp>2024-11-15T10:12:05</timestamp>
+    <event>User login</event>
+    <user>john_doe</user>
+    <ip_address>192.168.1.10</ip_address>
+    <status>success</status>
+  </log>
+  <log>
+    <timestamp>2024-11-15T10:15:32</timestamp>
+    <event>Failed login attempt</event>
+    <user>unknown</user>
+    <ip_address>203.0.113.45</ip_address>
+    <status>failed</status>
+  </log>
+  <log>
+    <timestamp>2024-11-15T10:17:45</timestamp>
+    <event>File accessed</event>
+    <user>jane_admin</user>
+    <ip_address>192.168.1.20</ip_address>
+    <file_path>/etc/passwd</file_path>
+    <action>read</action>
+  </log>
+  <log>
+    <timestamp>2024-11-15T10:22:12</timestamp>
+    <event>Network connection</event>
+    <user>service_account</user>
+    <ip_address>10.0.0.5</ip_address>
+    <destination_ip>8.8.8.8</destination_ip>
+    <port>443</port>
+    <protocol>https</protocol>
+  </log>
+  <log>
+    <timestamp>2024-11-15T10:34:09</timestamp>
+    <event>Malware detected</event>
+    <user>system_service</user>
+    <ip_address>127.0.0.1</ip_address>
+    <file_path>/tmp/suspicious.exe</file_path>
+    <action>quarantined</action>
+  </log>
+  <log>
+    <timestamp>2024-11-15T10:45:05</timestamp>
+    <event>DDoS attack detected</event>
+    <user>firewall_service</user>
+    <ip_address>203.0.113.88</ip_address>
+    <target_ip>192.168.1.15</target_ip>
+    <packet_count>5000</packet_count>
+  </log>
+  <log>
+    <timestamp>2024-11-15T11:05:50</timestamp>
+    <event>User logout</event>
+    <user>john_doe</user>
+    <ip_address>192.168.1.10</ip_address>
+    <status>success</status>
+  </log>
+  <log>
+    <timestamp>2024-11-15T11:10:21</timestamp>
+    <event>Service restart</event>
+    <user>system</user>
+    <service_name>apache2</service_name>
+    <ip_address>127.0.0.1</ip_address>
+    <action>restart</action>
+  </log>
+  <log>
+    <timestamp>2024-11-15T11:22:34</timestamp>
+    <event>File deleted</event>
+    <user>jane_admin</user>
+    <ip_address>192.168.1.20</ip_address>
+    <file_path>/var/log/old_backup.log</file_path>
+    <action>delete</action>
+  </log>
+  <log>
+    <timestamp>2024-11-15T11:34:56</timestamp>
+    <event>Suspicious network scan</event>
+    <user>unknown</user>
+    <ip_address>198.51.100.102</ip_address>
+    <scan_type>port_scan</scan_type>
+    <ports_scanned>22, 80, 443, 8080</ports_scanned>
+  </log>
+  <log>
+    <timestamp>2024-11-15T12:05:43</timestamp>
+    <event>Password change</event>
+    <user>jane_admin</user>
+    <ip_address>192.168.1.20</ip_address>
+    <status>success</status>
+  </log>
+  <log>
+    <timestamp>2024-11-15T12:20:09</timestamp>
+    <event>Data exfiltration attempt</event>
+    <user>unknown</user>
+    <ip_address>198.51.100.201</ip_address>
+    <data_size>500MB</data_size>
+    <action>blocked</action>
+  </log>
+  <log>
+    <timestamp>2024-11-15T12:33:00</timestamp>
+    <event>Failed login attempt</event>
+    <user>jane_admin</user>
+    <ip_address>203.0.113.45</ip_address>
+    <status>failed</status>
+  </log>
+  <log>
+    <timestamp>2024-11-15T12:55:12</timestamp>
+    <event>Database access</event>
+    <user>db_user</user>
+    <ip_address>10.0.0.25</ip_address>
+    <database>customer_db</database>
+    <query>SELECT * FROM users</query>
+  </log>
+  <log>
+    <timestamp>2024-11-15T13:15:37</timestamp>
+    <event>User login</event>
+    <user>admin</user>
+    <ip_address>192.168.1.30</ip_address>
+    <status>success</status>
+  </log>
+  <log>
+    <timestamp>2024-11-15T13:45:55</timestamp>
+    <event>System update</event>
+    <user>system</user>
+    <ip_address>127.0.0.1</ip_address>
+    <update_version>v2.5.3</update_version>
+  </log>
+</logs>
