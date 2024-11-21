@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log Analyzer - Upload</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Log Analyzer</title>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Log Analyzer</h1>
-            <nav>
-                <a href="/" class="active">Upload</a>
-                <a href="/dashboard">Dashboard</a>
-            </nav>
-        </header>
-
-        <main class="upload-section">
-            <div class="upload-container">
-                <div id="drop-zone" class="drop-zone">
-                    <img src="" alt="Upload icon">
-                    <h2>Drop XML log file here</h2>
-                    <p>or</p>
-                    <label for="file-upload" class="custom-file-upload">
-                        Choose File
-                    </label>
-                    <input type="file" id="file-upload" accept=".xml" hidden>
-                </div>
-                <div id="upload-status" class="upload-status"></div>
-            </div>
-        </main>
+        <h1>Log Analyzer</h1>
+        <div class="upload-section">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="logFile" name="file" accept=".xml" required>
+                <button type="submit">Analyze Log</button>
+            </form>
+        </div>
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing log file...</p>
+        </div>
+        <div id="error" class="error hidden"></div>
     </div>
 
-    <script src="/static/main.js"></script>
+    <script src="static/main.js"></script>
 </body>
 </html>
