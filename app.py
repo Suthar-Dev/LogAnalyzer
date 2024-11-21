@@ -2,11 +2,16 @@
 import json
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+
+def get_key():
+    load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-GEMINI_API_KEY = 'AIzaSyCpvFHTfMjZeZO3Ucj6MoXP3JcrUOCfAXY' 
-genai.configure(api_key=GEMINI_API_KEY)
+
+genai.configure(api_key=os.getenv('api_key'))
 
 generation_config = {
     "temperature": 0.7, 
@@ -50,10 +55,18 @@ def index():
                 xml_content = file.read().decode('utf-8')
                 
                 prompt = """
+                
+                I want to analyze logs generated from a system or a network. To do the analysis you need to Flag and identify suspicious 
+                logs and flag suspicious IP addresses, Breakdown of logs by severity levels, Display total number of logs, 
+                number of unique users, number of unique IP addresses, number of unique events and peak activity hours.
+                To flag suspicious logs, give a reason why you decided a log is suspicious and also give 
+                a mitigation strategy to prevent any issues later on. Give both reason and mitigation in a clear and concise manner, in a line or two.
+                Make sure you count the number of logs properly, double check your count of logs.
+                
                 Analyze this XML log file and provide a JSON response. The response MUST be valid JSON without any additional text or explanation.
                 Include the following information:
                 {
-                    "suspicious_logs": [{"log": "log_entry", "ip": "ip_address", "reason": "reason"}],
+                    "suspicious_logs": [{"log": "log_entry", "ip": "ip_address", "reason": "reason", "mitigation": "mitigation"}],
                     "severity_breakdown": {"high": N, "medium": N, "low": N},
                     "total_logs": N,
                     "unique_users": N,
@@ -94,4 +107,5 @@ def dashboard():
     return render_template('dashboard.html')
 
 if __name__ == '__main__':
+    get_key()
     app.run(debug=True)

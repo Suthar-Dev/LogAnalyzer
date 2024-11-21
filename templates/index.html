@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Log Analyzer</h1>
-        <div class="upload-section">
-            <form id="uploadForm" enctype="multipart/form-data">
-                <input type="file" id="logFile" name="file" accept=".xml" required>
-                <button type="submit">Analyze Log</button>
-            </form>
+    <div class="container upload-page">
+        <div class="upload-wrapper">
+            <h1><i class="fas fa-cloud-upload-alt"></i> Log Analyzer</h1>
+            <div class="upload-section">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="logFile" name="file" accept=".xml" required>
+                        <label for="logFile" class="file-input-label">
+                            <i class="fas fa-file-upload"></i> 
+                            <span id="file-chosen">No file chosen</span>
+                        </label>
+                    </div>
+                    <button type="submit">Analyze Log</button>
+                </form>
+            </div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing log file...</p>
+            </div>
+            <div id="error" class="error hidden"></div>
         </div>
-        <div id="loading" class="loading hidden">
-            <div class="spinner"></div>
-            <p>Analyzing log file...</p>
-        </div>
-        <div id="error" class="error hidden"></div>
     </div>
 
     <script src="static/main.js"></script>

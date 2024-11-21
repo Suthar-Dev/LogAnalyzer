@@ -1,0 +1,50 @@
+<system_logs>
+    <log>
+        <timestamp>2024-03-15T08:12:34Z</timestamp>
+        <source_ip>192.168.1.100</source_ip>
+        <destination_ip>203.0.113.45</destination_ip>
+        <username>john.doe</username>
+        <event_type>LOGIN_ATTEMPT</event_type>
+        <description>Multiple failed login attempts detected</description>
+    </log>
+    <log>
+        <timestamp>2024-03-15T08:13:45Z</timestamp>
+        <source_ip>203.0.113.45</source_ip>
+        <destination_ip>192.168.1.200</destination_ip>
+        <username>hacker123</username>
+        <event_type>UNAUTHORIZED_ACCESS</event_type>
+        <description>Potential security breach detected</description>
+    </log>
+    <log>
+        <timestamp>2024-03-15T09:22:11Z</timestamp>
+        <source_ip>10.0.0.55</source_ip>
+        <destination_ip>192.168.1.150</destination_ip>
+        <username>jane.smith</username>
+        <event_type>FILE_ACCESS</event_type>
+        <description>Sensitive file accessed</description>
+    </log>
+    <log>
+        <timestamp>2024-03-15T10:45:22Z</timestamp>
+        <source_ip>192.168.1.75</source_ip>
+        <destination_ip>198.51.100.22</destination_ip>
+        <username>bob.johnson</username>
+        <event_type>SYSTEM_UPDATE</event_type>
+        <description>Routine system update</description>
+    </log>
+    <log>
+        <timestamp>2024-03-15T11:30:55Z</timestamp>
+        <source_ip>203.0.113.45</source_ip>
+        <destination_ip>192.168.1.100</destination_ip>
+        <username>hacker123</username>
+        <event_type>PORT_SCAN</event_type>
+        <description>Suspicious port scanning activity</description>
+    </log>
+    <log>
+        <timestamp>2024-03-15T12:15:33Z</timestamp>
+        <source_ip>192.168.1.200</source_ip>
+        <destination_ip>10.0.0.55</destination_ip>
+        <username>alice.williams</username>
+        <event_type>DATA_TRANSFER</event_type>
+        <description>Large data transfer initiated</description>
+    </log>
+</system_logs>

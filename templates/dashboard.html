@@ -4,44 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log Analysis Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Log Analysis Results</h1>
-        <div class="dashboard-grid">
-            <div class="dashboard-card">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="dashboard-title">
+                <i class="fas fa-chart-line"></i>
+                <h1>Log Analysis Dashboard</h1>
+            </div>
+            <a href="/" class="back-button">
+                <i class="fas fa-upload"></i> Upload New Log
+            </a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stats-card">
                 <h3>Total Logs</h3>
-                <p id="totalLogs">-</p>
+                <p class="value" id="totalLogs">-</p>
             </div>
-            <div class="dashboard-card">
+            <div class="stats-card">
                 <h3>Unique Users</h3>
-                <p id="uniqueUsers">-</p>
+                <p class="value" id="uniqueUsers">-</p>
             </div>
-            <div class="dashboard-card">
+            <div class="stats-card">
                 <h3>Unique IPs</h3>
-                <p id="uniqueIPs">-</p>
+                <p class="value" id="uniqueIPs">-</p>
             </div>
-            <div class="dashboard-card">
+            <div class="stats-card">
                 <h3>Unique Events</h3>
-                <p id="uniqueEvents">-</p>
+                <p class="value" id="uniqueEvents">-</p>
             </div>
         </div>
 
-        <div class="severity-breakdown">
-            <h2>Severity Breakdown</h2>
-            <div class="severity-bars">
-                <div class="severity-bar">
-                    <span>High</span>
-                    <div class="bar high" id="highSeverity">0</div>
+        <div class="charts-container">
+            <div class="chart-card">
+                <h2>Severity Breakdown</h2>
+                <div class="chart-wrapper">
+                    <canvas id="severityChart"></canvas>
                 </div>
-                <div class="severity-bar">
-                    <span>Medium</span>
-                    <div class="bar medium" id="mediumSeverity">0</div>
-                </div>
-                <div class="severity-bar">
-                    <span>Low</span>
-                    <div class="bar low" id="lowSeverity">0</div>
+                <div id="severityPercentage" class="chart-percentage"></div>
+            </div>
+            <div class="chart-card">
+                <h2>Peak Hours Activity</h2>
+                <div class="chart-wrapper">
+                    <canvas id="peakHoursChart"></canvas>
                 </div>
             </div>
         </div>
@@ -54,6 +64,7 @@
                         <th>Log Entry</th>
                         <th>IP Address</th>
                         <th>Reason</th>
+                        <th>Mitigation</th>
                     </tr>
                 </thead>
                 <tbody id="suspiciousLogsBody">
@@ -61,15 +72,6 @@
                 </tbody>
             </table>
         </div>
-
-        <div class="peak-hours">
-            <h2>Peak Hours</h2>
-            <div id="peakHoursList">
-                <!-- Peak hours will be dynamically populated here -->
-            </div>
-        </div>
-
-        <a href="/" class="back-button">Back to Upload</a>
     </div>
 
     <script src="static/main.js"></script>
